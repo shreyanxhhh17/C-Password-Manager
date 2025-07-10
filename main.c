@@ -6,6 +6,8 @@
 #define MASTER_PASS "admin123" 
 #define KEY "mysecretkey"
 
+
+// Menu Function for selecting Add, View,Search
 void menu() {
     printf("\n===== PASSWORD MANAGER =====\n");
     printf("1. Add Credential\n");
@@ -15,6 +17,8 @@ void menu() {
     printf("5. Exit\n");
     printf("Choose an option: ");
 }
+
+// Driver's Code
 
 int main() {
     char input[100];

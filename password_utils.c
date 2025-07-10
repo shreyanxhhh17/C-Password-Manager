@@ -6,12 +6,16 @@
 #define FILENAME "data.enc"
 #define MAX_CREDENTIALS 100
 
+
+// Encrypted Function
 void encryptDecrypt(char *data, const char *key) {
     for (int i = 0; i < strlen(data); i++) {
         data[i] ^= key[i % strlen(key)];
     }
 }
 
+
+// Save Credential Function
 void saveCredential(const Credential *cred, const char *key) {
     FILE *fp = fopen(FILENAME, "ab");
     if (!fp) {
@@ -24,6 +28,7 @@ void saveCredential(const Credential *cred, const char *key) {
     fclose(fp);
 }
 
+// View Credentials
 void viewCredentials(const char *key) {
     FILE *fp = fopen(FILENAME, "rb");
     if (!fp) {
